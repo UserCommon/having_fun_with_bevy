@@ -11,7 +11,6 @@ impl Plugin for ScenePlugin {
     }
 }
 
-
 pub fn greeting_system() {
     println!("hello world!");
 }
@@ -38,7 +37,7 @@ pub fn spawn_light(
 ) {
     let light = PointLightBundle {
         point_light: PointLight {
-            intensity: 5000.0,
+            intensity: 50000.0,
             ..default()
         },
         transform: Transform::from_xyz(0., 5., 0.0),

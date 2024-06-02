@@ -1,5 +1,6 @@
 use bevy::prelude::*;
 use bevy::input::mouse::MouseMotion;
+use std::f32::consts::TAU;
 
 pub struct PlayerPlugin;
 
@@ -16,6 +17,53 @@ struct Player;
 
 #[derive(Component)]
 struct Speed(f32);
+
+#[derive(Component)]
+struct Rotatable(f32);
+
+
+fn spawn_player(
+    mut commands: Commands,
+    assets: Res<AssetServer>
+) {
+    let player_model = SceneBundle {
+        scene: assets.load("zombak.gltf#Scene0"),
+        transform: Transform::from_xyz(0., 0.5, 0.),
+        ..default()
+    };
+
+    let player_component = Player;
+
+    let player_speed = Speed(3.0);
+
+    let player_angle_speed = Rotatable(TAU / 360.);
+
+    let player = (player_model,
+                  player_component,
+                  player_speed,
+                  player_angle_speed);
+
+    commands.spawn(player);
+}
+
+
+fn player_mouse_motion(
+    mut motion: EventReader<MouseMotion>,
+    mut player_query: Query<(&mut Transform, &Rotatable), With<Player>>,
+    time: Res<Time>
+) {
+    for (mut player_t, rot) in &mut player_query {
+        let mut direction = Vec3::ZERO;
+
+        for m in motion.read() {
+            let look = rot.0 * m.delta.x;
+            player_t.rotate_y(look);
+            println!("look {}", look)
+        }
+    }
+}
+
+
 
 fn player_keyboard(
     time: Res<Time>,
@@ -51,31 +99,4 @@ fn player_keyboard(
         let movement = direction.normalize_or_zero() * player_speed.0 * time.delta_seconds();
         player_t.translation += movement;
     }
-}
-
-fn player_mouse_motion(
-    mut motion: EventReader<MouseMotion>
-) {
-    for m in motion.read() {
-        println!("Mouse moved: X: {} px, Y: {} px", m.delta.x, m.delta.y);
-    }
-}
-
-fn spawn_player(
-    mut commands: Commands,
-    assets: Res<AssetServer>
-) {
-    let player_model = SceneBundle {
-        scene: assets.load("zombak.gltf#Scene0"),
-        transform: Transform::from_xyz(0., 0.5, 0.),
-        ..default()
-    };
-
-    let player_component = Player;
-
-    let player_speed = Speed(2.0);
-
-    let player = (player_model, player_component, player_speed);
-
-    commands.spawn(player);
 }
