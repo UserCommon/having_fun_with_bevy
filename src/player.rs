@@ -1,0 +1,77 @@
+use bevy::prelude::*;
+
+pub struct PlayerPlugin;
+
+impl Plugin for Player {
+    fn build(&self, app: &mut App) {
+        app.add_systems(Startup, spawn_player)
+           .add_systems(Update, player_movement);
+    }
+}
+
+#[derive(Component)]
+struct Player;
+
+#[derive(Component)]
+struct Speed(f32);
+
+fn player_movement(
+    keys: Res<Input<KeyCode>>,
+    time: Res<Time>,
+    mut player_query: Query<&mut Transform, With<Player>>,
+    cam_query: Query<&Transform, (With<Camera3d>, Without<Player>)>
+) {
+    for player_t in player_query.iter_mut() {
+        let cam = match cam_query.get_single() {
+            Ok(c) => c,
+            Err(e) => Err(format!("error retrieving camera: {}", e)).unwrap()
+        };
+
+        let direction = Vec3::ZERO;
+
+        if keys.pressed(KeyCode::W) {
+            direction += cam.forward()
+        }
+
+        if keys.pressed(KeyCode::A) {
+            direction += cam.left()
+        }
+
+        if keys.pressed(KeyCode::S) {
+            direction += cam.back()
+        }
+
+        if keys.pressed(KeyCode::D) {
+            direction += cam.right()
+        }
+
+        direction.y = 0.;
+        let movement = direction.normalize_or_zero() * player_speed.0 * time.delta_seconds();
+        player_t.translation += movement;
+    }
+
+}
+
+fn spawn_player(
+    mut commands: Commands,
+    mut meshes: ResMut<Assets<Mesh>>,
+    mut mateials: ResMut<Assets<StandardMaterial>>
+) {
+    let player_model = PbrBundle {
+        mesh: meshes.add(Mesh::from(shape::Cube::new(size: 2.0))),
+        material: materials.add(StandardMaterial {
+            base_color: Color::BLUE,
+            ..default()
+        }),
+        transform: Transform::from_xyz(0.0, 0.5, 0.0),
+        ..default()
+    };
+
+    let player_component = Player;
+
+    let player_speed = Speed(2.0);
+
+    let player = (player_model, player_component, player_speed);
+
+    commands.spawn(player);
+}
