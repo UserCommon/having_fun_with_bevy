@@ -1,0 +1,402 @@
+{
+  "accessors": [
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 1136,
+      "max": [
+        0.3138970136642456,
+        1.9622679948806763,
+        0.5644599795341492
+      ],
+      "min": [
+        -0.30513399839401245,
+        0.31810298562049866,
+        -0.24729500710964203
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 13632,
+      "componentType": 5126,
+      "count": 1136,
+      "max": [
+        0.9930256605148315,
+        0.998046338558197,
+        0.996719479560852
+      ],
+      "min": [
+        -0.9981604218482971,
+        -0.998046875,
+        -0.9968538880348206
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 1136,
+      "max": [
+        0.995048999786377,
+        0.8712869882583618
+      ],
+      "min": [
+        0.0,
+        0.0
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "componentType": 5125,
+      "count": 1548,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 27264,
+      "componentType": 5126,
+      "count": 884,
+      "max": [
+        0.4033600091934204,
+        1.7983959913253784,
+        0.8351439833641052
+      ],
+      "min": [
+        -0.33349400758743286,
+        -0.0022700000554323196,
+        -0.2632009983062744
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 37872,
+      "componentType": 5126,
+      "count": 884,
+      "max": [
+        0.9995810389518738,
+        0.9993450045585632,
+        0.9955354332923889
+      ],
+      "min": [
+        -0.999910831451416,
+        -0.9998856782913208,
+        -0.9995971918106079
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 9088,
+      "componentType": 5126,
+      "count": 884,
+      "max": [
+        0.995048999786377,
+        0.8712869882583618
+      ],
+      "min": [
+        0.00494999997317791,
+        0.128712996840477
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 6192,
+      "componentType": 5125,
+      "count": 1182,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 48480,
+      "componentType": 5126,
+      "count": 160,
+      "max": [
+        0.17471900582313538,
+        1.6552799940109253,
+        0.20474599301815033
+      ],
+      "min": [
+        -0.21855799853801727,
+        1.4561070203781128,
+        -0.20602500438690186
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 50400,
+      "componentType": 5126,
+      "count": 160,
+      "max": [
+        0.9469884037971497,
+        0.9560428261756897,
+        0.9542275667190552
+      ],
+      "min": [
+        -0.9446404576301575,
+        -0.9464998245239258,
+        -0.9497856497764587
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 16160,
+      "componentType": 5126,
+      "count": 160,
+      "max": [
+        0.7475249767303467,
+        0.8712869882583618
+      ],
+      "min": [
+        0.00494999997317791,
+        0.128712996840477
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 10920,
+      "componentType": 5125,
+      "count": 240,
+      "type": "SCALAR"
+    }
+  ],
+  "asset": {
+    "extras": {
+      "author": "DavidA3D (https://sketchfab.com/DavidA3D)",
+      "license": "CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)",
+      "source": "https://sketchfab.com/3d-models/low-poly-zombie-b-sucker-punch-f2ba9b0568f34efabae7a113ed219b9c",
+      "title": "Low-Poly Zombie B (Sucker Punch)"
+    },
+    "generator": "Sketchfab-15.17.0",
+    "version": "2.0"
+  },
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 11880,
+      "name": "floatBufferViews",
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteLength": 17440,
+      "byteOffset": 11880,
+      "byteStride": 8,
+      "name": "floatBufferViews",
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 52320,
+      "byteOffset": 29320,
+      "byteStride": 12,
+      "name": "floatBufferViews",
+      "target": 34962
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 81640,
+      "uri": "scene.bin"
+    }
+  ],
+  "materials": [
+    {
+      "doubleSided": true,
+      "name": "Black",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.047059,
+          0.047059,
+          0.047059,
+          1.0
+        ],
+        "metallicFactor": 0.0,
+        "roughnessFactor": 0.9911163053116739
+      }
+    },
+    {
+      "doubleSided": true,
+      "name": "Black-Dark",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "metallicFactor": 0.0
+      }
+    },
+    {
+      "doubleSided": true,
+      "name": "Khaki-Dark",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.203922,
+          0.235294,
+          0.164706,
+          1.0
+        ],
+        "metallicFactor": 0.0,
+        "roughnessFactor": 0.9578862131186674
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "name": "ZombieC.obj_Black_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 1,
+            "POSITION": 0,
+            "TEXCOORD_0": 2
+          },
+          "indices": 3,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "ZombieC.obj_Black-Dark_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 5,
+            "POSITION": 4,
+            "TEXCOORD_0": 6
+          },
+          "indices": 7,
+          "material": 1,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "ZombieC.obj_Khaki-Dark_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 9,
+            "POSITION": 8,
+            "TEXCOORD_0": 10
+          },
+          "indices": 11,
+          "material": 2,
+          "mode": 4
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "children": [
+        1
+      ],
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.220446049250313e-16,
+        -1.0,
+        0.0,
+        0.0,
+        1.0,
+        2.220446049250313e-16,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "Sketchfab_model"
+    },
+    {
+      "children": [
+        2
+      ],
+      "matrix": [
+        0.009999999776482582,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.009999999776482582,
+        0.0,
+        0.0,
+        -0.009999999776482582,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "3eeee373c1844872a4405f8aab7e7234.fbx"
+    },
+    {
+      "children": [
+        3
+      ],
+      "name": "RootNode"
+    },
+    {
+      "children": [
+        4,
+        5,
+        6
+      ],
+      "matrix": [
+        100.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        99.99999999999866,
+        1.6292067073209114e-05,
+        0.0,
+        0.0,
+        -1.6292067073209114e-05,
+        99.99999999999866,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "ZombieC.obj"
+    },
+    {
+      "mesh": 0,
+      "name": "ZombieC.obj_Black_0"
+    },
+    {
+      "mesh": 1,
+      "name": "ZombieC.obj_Black-Dark_0"
+    },
+    {
+      "mesh": 2,
+      "name": "ZombieC.obj_Khaki-Dark_0"
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "name": "Sketchfab_Scene",
+      "nodes": [
+        0
+      ]
+    }
+  ]
+}

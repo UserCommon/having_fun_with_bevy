@@ -1,11 +1,12 @@
 use bevy::prelude::*;
 
+
 pub struct ScenePlugin;
 
-impl Plugin for Scene {
+impl Plugin for ScenePlugin {
     fn build(&self, app: &mut App) {
         app.add_systems(Startup, (greeting_system,
-                                  spawn_floorm,
+                                  spawn_floor,
                                   spawn_light));
     }
 }

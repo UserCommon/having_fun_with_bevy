@@ -1,6 +1,6 @@
 {pkgs}:
 let
-    llvm = pkgs.llvmPackages_latest;
+    llvm = pkgs.llvmPackages;
 
     bevyInputs = with pkgs; [
         udev alsa-lib vulkan-loader
@@ -8,13 +8,6 @@ let
         libxkbcommon wayland # To use the wayland feature
 
         libGL
-    ];
-
-    rustInputs = with pkgs; [
-        (rust-bin.stable.latest.default.override {
-            targets = ["x86_64-unknown-linux-gnu"];
-            extensions = [ "rust-src" "rust-analyzer" "clippy" ];
-        })
     ];
 
     clangInputs = with llvm; [
@@ -35,11 +28,15 @@ pkgs.mkShell rec {
     ];
 
     buildInputs = [] ++ clangInputs
-                     ++ rustInputs
                      ++ bevyInputs
                      ++ otherInputs;
 
 
-    LD_LIBRARY_PATH = pkgs.lib.makeLibraryPath buildInputs;
+    # LD_LIBRARY_PATH = pkgs.lib.makeLibraryPath buildInputs;
+
+    shellHook = ''
+        alias run="cargo run --features bevy/dynamic_linking"
+    '';
+
     RUST_BACKTRACE = "full";
 }
